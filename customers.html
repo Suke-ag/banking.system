@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details - Basic Banking System</title>
+    <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/7b1286c3f9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <link rel="stylesheet" href="customer.css">
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+</head>
+
+<body>
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
+        <img class="logo" src="logo.png" alt="logo-of-the-sparks-foundation">
+        <a class="navbar-brand" href="./index.html">Spark Bank</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><b class="nav-text">Home</b></a>
+                </li>
+                <li class="nav-item  active">
+                    <a class="nav-link" id="nl2" href="./customers.html"><b class="nav-text">customers</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <div class="my-info text-center">
+        <h2>Name: Mohit Agarwal</h2>
+        <h4>Bank Balance: &#8377;<span id="AcBalance">2060000</span></h4>
+
+        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All Transactions</a>
+    </div>
+
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">&#8377;</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="bt1"type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered ">
+                <thead>
+                    <tr class="table-danger" style="background-color: #368e4c!important;">
+                        <th scope="col" style="background-color: #368e4c!important; color: #fff!important;">Sl. No.</th>
+                        <th scope="col" style="background-color: #368e4c!important; color: #fff!important;">Name</th>
+                        <th scope="col" style="background-color: #368e4c!important; color: #fff!important;">E-mail</th>
+                        <th scope="col" style="background-color: #368e4c!important; color: #fff!important;">Bank Balance(in &#8377;)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-success">
+                        <td scope="row">1</td>
+                        <td>Arjun</td>
+                        <td>arjun@gmail.com</td>
+                        <td>
+                            <p id="AbhishekBankBalance">4500</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">2</td>
+                        <td>Mohan</td>
+                        <td>mohan@gmail.com</td>
+                        <td>
+                            <p id="PranayBankBalance">24000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">3</td>
+                        <td>Dev</td>
+                        <td>dev@gmail.com</td>
+                        <td>
+                            <p id="DivyaBankBalance">3400</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">4</td>
+                        <td>Rohan</td>
+                        <td>rohan@gmail.com</td>
+                        <td>
+                            <p id="RohanBankBalance">4000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">5</td>
+                        <td>Rohnak</td>
+                        <td>rohnak@gmail.com</td>
+                        <td>
+                            <p id="AdityaBankBalance">6300</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">6</td>
+                        <td>Neeta</td>
+                        <td>neeta@gmail.com</td>
+                        <td>
+                            <p id="NeetaBankBalance">1003</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>7</td>
+                        <td>Nehal</td>
+                        <td>nehal@gmail.com</td>
+                        <td>
+                            <p id="SangamBankBalance">5600</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>8</td>
+                        <td>Mansa</td>
+                        <td>mansa@gmail.com</td>
+                        <td>
+                            <p id="ManiBankBalance">5600</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">9</td>
+                        <td>Deepa</td>
+                        <td>deepa@gmail.com</td>
+                        <td>
+                            <p id="PunamBankBalance">35603</p>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td scope="row">10</td>
+                        <td>Vijay</td>
+                        <td>vijay@gmail.com</td>
+                        <td>
+                            <p id="VijayBankBalance">8500</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark" style="color: white;" id="about">
+        <div class="App-Logo d-sm-none d-inline-block d-md-inline-block">
+          <p id="app_name" class="navbar-brand">SPARK BANK</p>
+        </div>
+        <div class="DesignerInfo">
+          <p class="m-0 d-none d-sm-inline-block fw-medium fs-5">
+            Designed and Developed By
+            <span id="Name"> Mohit Agarwal</span>
+          </p>
+        </div>
+        <div class="SocialMedia">
+          <a href="https://github.com/Suke-ag" target="_blank" title="Github-Profile">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://www.linkedin.com/in/mohitag026/" target="_blank" title="Linkdin-Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+      </footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+      });
+    </script>
+    
+</body>
+</html>

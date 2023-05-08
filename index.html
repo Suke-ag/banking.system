@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mohit Agarwal">
+
+  <title>Basic Banking System</title>
+
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/7b1286c3f9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+  <!-- StyleSheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- AOS  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body onload="loader()">
+
+  <!-- loader for splash screen -->
+  <div id="loading"></div>
+
+  <!-- navbar starts here  -->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
+    <img class="logo" src="logo.png" alt="logo-of-the-sparks-foundation">
+    <a class="navbar-brand" href="./index.html">Spark Bank</a> <!--&#8377; -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" id="nl1" href="./index.html"><b class="nav-text">Home</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nl2" href="./customers.html"><b class="nav-text">View Customers</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nl2" href="#contactus"><b class="nav-text">Contact Us</b></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar ends here  -->
+
+  <!-- here content starts here -->
+  <div class="container-fluid hero-content">
+    <div class="row align-items-center">
+      <div class="col-md-6 col-sm-12 text-center" data-aos="fade-up">
+        <h1>Welcome To <span style="color: rgb(15, 243, 224);">Spark Bank</span></h1>
+        <p style="color: rgb(180, 194, 52) ;">Low Risk High Gain</p>
+        <br>
+        <br>
+        <a class="get-started" href="./customers.html">Explore Customers</a>
+      </div>
+      <div class="col-md-6 col-sm-12 text-center" data-aos="fade-left">
+        <div class="hero-img-div">
+          <img class="hero-img" src="bank.png" alt="img-showing-money-transfer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- here content ends here -->
+
+  <!-- Contact us -->
+  <section id="contactus" class="pb-2 my-5" style="width: 97vw;">
+    <div class="container">
+      <div class="box mb-3">
+        <h2 id="hed"> Contact Us</h2>
+        <input type="email" id="int" placeholder="user name,email id" required>
+        <input type="text" id="int" placeholder="Mobile no" required>
+        <input type="text" id="int" placeholder="description" >
+        <input id="a" type="Submit" value="Contact Us">
+        <p class="mt-3" style="text-align: center;">OR</p>
+        <p><a class=" p-2" href="https://github.com/Suke-ag" target="_blank" title="Github-Profile">
+            <i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mohitag026/" target="_blank" title="Linkdin-Profile">
+            <i class="fa-brands fa-linkedin-in"></i></a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- /Contact us -->
+
+
+
+
+  <!-- footer starts here -->
+  <footer class="footer bg-dark" style="color: white;" id="about">
+    <div class="App-Logo d-sm-none d-inline-block d-md-inline-block">
+      <p id="app_name" class="navbar-brand">SPARK BANK</p>
+    </div>
+    <div class="DesignerInfo">
+      <p class="m-0 d-none d-sm-inline-block fw-medium fs-5">
+        Designed and Developed By
+        <span id="Name"> Mohit Agarwal</span>
+      </p>
+    </div>
+    <div class="SocialMedia">
+      <a class="ab" href="https://github.com/Suke-ag" target="_blank" title="Github-Profile">
+        <i class="fa-brands fa-github"></i>
+        <a class="ab" href="https://www.linkedin.com/in/mohitag026/" target="_blank" title="Linkdin-Profile">
+          <i class="fa-brands fa-linkedin-in"></i>
+    </div>
+  </footer>
+  <!-- footer ends here -->
+
+  <!-- spalsh screen js -->
+  <script>
+    var preloader = document.getElementById("loading");
+    function loader() {
+      preloader.style.display = 'none';
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+  <!-- aos data  -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+    });
+  </script>
+
+</body>
+
+</html>
