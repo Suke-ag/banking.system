@@ -73,12 +73,12 @@ body{
 }
 
 .navebar-toggler-icon, .navbar-toggler, .collapsed{
-    color:#f2e9e4;
-    background-color: #f2e9e4;
+    color:#efd7ca;
+    background-color: #937c6f;
 }
 .collapsed:hover{
-    color:#f2e9e4;
-    background-color: #f2e9e4;
+    color:#bcaaa1;
+    background-color: #c8a795;
 }
 
 @media only screen and (max-width: 766px) {
